@@ -19,16 +19,21 @@ $.ajax({
 			var template = Handlebars.compile(source);
 				
 			for(var i = 0; i < cds.length; i++){
+
 				var autore = cds[i].author;
 				var copertina = cds[i].poster;
 				var anno = cds[i].year;
 				var titolo = cds[i].title;
+				var genere = cds[i].genre;
+				
 				var context = {
 					poster: copertina,
 					title: titolo,
 					author: autore,
-					year: anno
+					year: anno,
+					genre: genere
 				}
+				
 				var html = template(context);
 				list.append(html);
 			}
